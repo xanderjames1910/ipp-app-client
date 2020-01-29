@@ -37,7 +37,7 @@ const App = () => {
         <Redirect to='/login' />
       ) : (
         <Fragment>
-          <Sidebar.Pushable>
+          <Sidebar.Pushable style={{ height: '100vh' }}>
             <Sidebar as={Menu} animation='push' icon='labeled' inverted vertical visible={visible} width='thin'>
               <SideMenu />
             </Sidebar>

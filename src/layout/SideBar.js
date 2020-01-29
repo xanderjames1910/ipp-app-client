@@ -20,7 +20,6 @@ const SideBar = () => {
       </Sidebar>
       <Sidebar.Pusher className={!visible ? '' : 'pusher-width-toggled'}>
         <Menu pointing color='blue' fixed='top'>
-          {/* <Menu.Item icon='bars' onClick={sideBarToggle} /> */}
           <Menu.Item icon='bars' />
           <MenuBar sideBarToggle={sideBarToggle} />
         </Menu>

@@ -27,7 +27,7 @@ const App = () => {
   const [visible, setVisible] = useState(false);
 
   const sideBarToggle = () => {
-    !visible ? setVisible(true) : setVisible(false);
+    setVisible(!visible);
   };
 
   return (
@@ -37,18 +37,26 @@ const App = () => {
         <Redirect to='/login' />
       ) : (
         <Fragment>
-          <Sidebar.Pushable style={{ height: '100vh' }}>
-            <Sidebar as={Menu} animation='push' icon='labeled' inverted vertical visible={visible} width='thin'>
+          <Sidebar.Pushable style={{ height: '100%' }}>
+            <Sidebar
+              as={Menu}
+              animation='push'
+              icon='labeled'
+              inverted
+              vertical
+              visible={visible}
+              width='thin'
+              style={{ width: '12vh' }}>
               <SideMenu />
             </Sidebar>
-            <Sidebar.Pusher className={!visible ? '' : 'pusher-width-toggled'}>
+            <Sidebar.Pusher className={!visible ? '' : 'pusher-width-toggled'} style={{ minHeight: '100vh' }}>
               <Menu pointing color='blue' fixed='top'>
                 <Menu.Item icon='bars' onClick={sideBarToggle} />
                 <MenuBar sideBarToggle={sideBarToggle} />
               </Menu>
               <Container style={{ paddingTop: '4em' }}>
                 <Switch>
-                  <Route exact path='/inicio' component={Inicio} />
+                  <Route exact path='/' component={Inicio} />
                   <Route exact path='/configuracion' component={AdminSettings} />
                   <Route exact path='/register-modal' component={RegisterModal} />
                   <Route exact path='/register' component={Register} />

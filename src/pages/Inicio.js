@@ -7,6 +7,7 @@ import { Line } from 'react-chartjs-2';
 // import { AuthContext } from '../context/auth';
 import { FETCH_DAILY_DATA_QUERY } from '../util/graphql';
 import MapIPP from '../components/MapIPP';
+import GlobalFilter from '../components/GlobalFilter';
 
 const Inicio = () => {
   // const { user } = useContext(AuthContext);
@@ -96,6 +97,9 @@ const Inicio = () => {
   return (
     <div>
       <Grid>
+        <Grid.Column width={16}>
+          <GlobalFilter />
+        </Grid.Column>
         <Grid.Column width={6}>
           <MapIPP />
         </Grid.Column>

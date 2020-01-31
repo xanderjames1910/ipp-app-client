@@ -2,8 +2,8 @@ import React, { useContext, Fragment, useState } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { Container, Menu, Sidebar } from 'semantic-ui-react';
 
-// import 'semantic-ui-css/semantic.min.css';
-import 'semantic-ui-css/semantic.css';
+import 'semantic-ui-css/semantic.min.css';
+// import 'semantic-ui-css/semantic.css';
 import './App.css';
 
 import { AuthContext } from './context/auth';

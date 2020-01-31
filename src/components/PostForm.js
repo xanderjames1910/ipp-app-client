@@ -17,8 +17,8 @@ const PostForm = () => {
       const data = proxy.readQuery({
         query: FETCH_POSTS_QUERY,
       });
+
       const new_post = result.data.createPost;
-      // data.getPosts = [result.data.createPost, ...data.getPosts];
       proxy.writeQuery({ query: FETCH_POSTS_QUERY, data: { getPosts: [new_post, ...data.getPosts] } });
       values.body = '';
     },

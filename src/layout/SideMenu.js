@@ -9,7 +9,9 @@ const SideMenu = () => {
 
   const [activeItem, setActiveItem] = useState();
 
-  const handleItemClick = (e, { name }) => setActiveItem(name);
+  const handleItemClick = (e, { name }) => {
+    setActiveItem(name);
+  };
 
   return (
     <Fragment>

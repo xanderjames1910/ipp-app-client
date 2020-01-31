@@ -10,8 +10,6 @@ import MapIPP from '../components/MapIPP';
 import GlobalFilter from '../components/GlobalFilter';
 
 const Inicio = () => {
-  // const { user } = useContext(AuthContext);
-
   let datosDiarios = '';
   const { loading, data } = useQuery(FETCH_DAILY_DATA_QUERY);
 
@@ -108,7 +106,7 @@ const Inicio = () => {
             <Card.Content header='Monitoreo de Producción' />
             <Card.Content style={{ height: 350 }}>
               {loading ? (
-                <Dimmer active>
+                <Dimmer active inverted>
                   <Loader>Cargando datos...</Loader>
                 </Dimmer>
               ) : (

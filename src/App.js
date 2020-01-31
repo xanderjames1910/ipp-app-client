@@ -20,6 +20,7 @@ import AdminSettings from './pages/AdminSettings';
 import RegisterModal from './pages/RegisterModal';
 import MapIPP from './components/MapIPP';
 import GoogleMapsIPP from './components/GoogleMapsIPP';
+import Home from './pages/Home';
 
 const App = () => {
   const { user } = useContext(AuthContext);
@@ -37,19 +38,11 @@ const App = () => {
         <Redirect to='/login' />
       ) : (
         <Fragment>
-          <Sidebar.Pushable style={{ height: '100%' }}>
-            <Sidebar
-              as={Menu}
-              animation='push'
-              icon='labeled'
-              inverted
-              vertical
-              visible={visible}
-              width='thin'
-              style={{ width: '12vh' }}>
+          <Sidebar.Pushable>
+            <Sidebar as={Menu} animation='push' icon='labeled' inverted vertical visible={visible} width='thin'>
               <SideMenu />
             </Sidebar>
-            <Sidebar.Pusher className={!visible ? '' : 'pusher-width-toggled'} style={{ minHeight: '100vh' }}>
+            <Sidebar.Pusher className={!visible ? '' : 'pusher-width-toggled'}>
               <Menu pointing color='blue' fixed='top'>
                 <Menu.Item icon='bars' onClick={sideBarToggle} />
                 <MenuBar sideBarToggle={sideBarToggle} />
@@ -62,6 +55,7 @@ const App = () => {
                   <Route exact path='/register' component={Register} />
                   <Route exact path='/mapa' component={MapIPP} />
                   <Route exact path='/maps' component={GoogleMapsIPP} />
+                  <Route exact path='/home' component={Home} />
                 </Switch>
               </Container>
             </Sidebar.Pusher>

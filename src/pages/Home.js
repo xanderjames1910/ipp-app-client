@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { Grid, Card } from 'semantic-ui-react';
-import { Line } from 'react-chartjs-2';
+import { Grid } from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
 import PostCard from '../components/PostCard';
 import PostForm from '../components/PostForm';
-import { FETCH_POSTS_QUERY, FETCH_DAILY_DATA_QUERY } from '../util/graphql';
+import { FETCH_POSTS_QUERY } from '../util/graphql';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
